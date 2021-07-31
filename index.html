@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1">
+    <title>EncURL</title>
+    <style type="text/css">
+        @import url(style.css);
+    </style>
+</head>
+
+<body>
+    <h1 id="topo">EncURL</h1>
+    <!--Formulário de Login-->
+    <form method="POST" action="initial-page.html">
+        <label>Login: </label><input type="text" name="Tlogin" id="Tlogin"><br><br>
+        <label>Senha: </label><input type="password" name="Tsenha" id="Tsenha"><br><br>
+        <input type="button" onclick="validar()" value="Entrar">
+    </form>
+    <!--Função de Checagem de Login-->
+    <script>
+
+        function validar() {
+
+            var Login = document.getElementById("Tlogin").value;
+            var Senha = document.getElementById("Tsenha").value;
+
+            var firebaseConfig = { /// Inicializando Banco de Dados Firebase
+                apiKey: "AIzaSyAkmx63ZhPAlaalV2MSeRzamt7vuXQNl-g",
+                authDomain: "marilia-proj.firebaseapp.com",
+                projectId: "marilia-proj",
+                storageBucket: "marilia-proj.appspot.com",
+                messagingSenderId: "287774404730",
+                appId: "1:287774404730:web:76ac67286a1dfd1c844bc3"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+
+            var tabLogon = db.collection("Logon"); /// Declarando variável local com dados do banco
+
+            const dbRef = firebase.database().ref();
+            dbRef.child("Logon").child(logon).get().then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot.val());
+                    return true;
+                } else {
+                    console.log("No data available");
+                    return false;
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
+        }
+    </script>
+</body>
+
+</html>
