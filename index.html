@@ -1,57 +1,59 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EncURL</title>
+
+    <!-- Adicionando Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style type="text/css">
-        @import url(style.css);
+        body {
+            background-color: #f8f9fa;
+            color: #28a745;
+        }
+
+        #topo {
+            text-align: center;
+        }
+
+        #loginBtn {
+            background-color: #28a745;
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
-    <h1 id="topo">EncURL</h1>
-    <!--Formulário de Login-->
-    <form method="POST" action="initial-page.html">
-        <label>Login: </label><input type="text" name="Tlogin" id="Tlogin"><br><br>
-        <label>Senha: </label><input type="password" name="Tsenha" id="Tsenha"><br><br>
-        <input type="button" onclick="validar()" value="Entrar">
-    </form>
-    <!--Função de Checagem de Login-->
-    <script>
+    <!-- Barra de navegação Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">EncURL</a>
+    </nav>
 
-        function validar() {
+    <div class="container mt-5">
+        <h1 id="topo">EncURL</h1>
+        <!-- Formulário de Login -->
+        <form method="POST" action="initial-page.html">
+            <div class="form-group">
+                <label for="Tlogin">Login:</label>
+                <input type="text" class="form-control" name="Tlogin" id="Tlogin">
+            </div>
+            <div class="form-group">
+                <label for="Tsenha">Senha:</label>
+                <input type="password" class="form-control" name="Tsenha" id="Tsenha">
+            </div>
+            <button type="button" class="btn btn-success" onclick="validar()" id="loginBtn">Entrar</button>
+        </form>
+    </div>
 
-            var Login = document.getElementById("Tlogin").value;
-            var Senha = document.getElementById("Tsenha").value;
+    <!-- Adicionando Bootstrap JS (opcional, mas muitas funcionalidades do Bootstrap dependem disso) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-            var firebaseConfig = { /// Inicializando Banco de Dados Firebase
-                apiKey: "AIzaSyAkmx63ZhPAlaalV2MSeRzamt7vuXQNl-g",
-                authDomain: "marilia-proj.firebaseapp.com",
-                projectId: "marilia-proj",
-                storageBucket: "marilia-proj.appspot.com",
-                messagingSenderId: "287774404730",
-                appId: "1:287774404730:web:76ac67286a1dfd1c844bc3"
-            };
-
-            firebase.initializeApp(firebaseConfig);
-
-            var tabLogon = db.collection("Logon"); /// Declarando variável local com dados do banco
-
-            const dbRef = firebase.database().ref();
-            dbRef.child("Logon").child(logon).get().then((snapshot) => {
-                if (snapshot.exists()) {
-                    console.log(snapshot.val());
-                    return true;
-                } else {
-                    console.log("No data available");
-                    return false;
-                }
-            }).catch((error) => {
-                console.error(error);
-            });
-        }
-    </script>
+    <script src="./functions.js"></script>
 </body>
 
 </html>

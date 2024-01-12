@@ -1,41 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width-device-width, initial-scale-1">
-<title>EncURL - Home</title>
-<style type="text/css">
-    @import url(style.css);
-</style>
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!--Função Para Encurtar URL-->
-<script>
-        function EncURL() {
-            var valor = document.getElementById("link").value; /// Acessando URL original no form
-            $.getJSON("https://is.gd/create.php?callback=?", { /// Retornando dados do servidor em formato JSON
-                url: valor,
-                format: "json"
-            }).done(function (data) { /// Chamada da função com os dados retornados como parâmetro
-                let novaUrl = data.shorturl;
-                console.log(novaUrl);
-                if (novaUrl !== undefined) /// Testando link 
-                {
-                    document.getElementById("url_encurtada").innerHTML = novaUrl;
-                } else
-                {
-                    document.getElementById("url_encurtada").innerHTML = "Erro ao gerar link";
-                }
-            });
-        }
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EncURL - Home</title>
+
+    <!-- Adicionando Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style type="text/css">
+        @import url(style.css);
+       
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Função Para Encurtar URL -->
+    <script src="./functions.js"></script>
 </head>
 <body>
-    <!--Formulário de Entrada de Dados-->
-    <form id="furl">
-        <input type="text" name="link" id="link" placeholder="Insira a URL">
-        <input type="button" onclick="EncURL()" value="Gerar URL">
-    </form>
-    <p>Link Gerado:</p>
-    <p id="url_encurtada"></p>
+    <div class="container mt-5">
+        <!-- Formulário de Entrada de Dados -->
+        <form id="furl">
+            <div class="form-group">
+                <input type="text" class="form-control" name="link" id="link" placeholder="Insira a URL">
+            </div>
+            <button type="button" class="btn btn-success" onclick="EncURL()">Gerar URL</button>
+        </form>
+        <p class="mt-3">Link Gerado:</p>
+        <p id="url_encurtada"></p>
+    </div>
+
+    <!-- Adicionando Bootstrap JS (opcional, mas muitas funcionalidades do Bootstrap dependem disso) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
