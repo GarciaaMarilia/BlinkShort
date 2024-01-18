@@ -4,23 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EncURL</title>
+    <title>BlinkShort</title>
 
-    <!-- Adicionando Bootstrap CSS -->
+    <!-- Adicionando Bootstrap CSS com cores modificadas -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <style type="text/css">
         body {
-            background-color: #f8f9fa;
-            color: #28a745;
+            background-color: #343a40;
+            color: #007bff;
         }
 
         #topo {
             text-align: center;
+            color: #007bff;
+        }
+
+        .navbar-light .navbar-brand {
+            color: #007bff;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #007bff;
+        }
+
+        .container {
+            margin-top: 5%;
+        }
+
+        .form-control {
+            background-color: #495057;
+            border: 1px solid #495057;
+            color: #adb5bd;
         }
 
         #loginBtn {
-            background-color: #28a745;
+            background-color: #007bff;
             color: #fff;
         }
     </style>
@@ -29,11 +48,11 @@
 <body>
     <!-- Barra de navegação Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">EncURL</a>
+        <a class="navbar-brand" href="#">BlinkShort</a>
     </nav>
 
     <div class="container mt-5">
-        <h1 id="topo">EncURL</h1>
+        <h1 id="topo">BlinkShort</h1>
         <!-- Formulário de Login -->
         <form method="POST" action="initial-page.html">
             <div class="form-group">
