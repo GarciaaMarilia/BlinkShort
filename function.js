@@ -1,36 +1,5 @@
-function validar() {
 
-    var Login = document.getElementById("Tlogin").value;
-    var Senha = document.getElementById("Tsenha").value;
-
-    var firebaseConfig = { /// Inicializando Banco de Dados Firebase
-        apiKey: "AIzaSyAkmx63ZhPAlaalV2MSeRzamt7vuXQNl-g",
-        authDomain: "marilia-proj.firebaseapp.com",
-        projectId: "marilia-proj",
-        storageBucket: "marilia-proj.appspot.com",
-        messagingSenderId: "287774404730",
-        appId: "1:287774404730:web:76ac67286a1dfd1c844bc3"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-
-    var tabLogon = db.collection("Logon"); 
-
-    const dbRef = firebase.database().ref();
-    dbRef.child("Logon").child(logon).get().then((snapshot) => {
-        if (snapshot.exists()) {
-            console.log(snapshot.val());
-            return true;
-        } else {
-            console.log("No data available");
-            return false;
-        }
-    }).catch((error) => {
-        console.error(error);
-    });
-}
-
-function EncURL() {
+function getBlinkShort() {
     var valor = document.getElementById("link").value; /// Acessando URL original no form
     $.getJSON("https://is.gd/create.php?callback=?", { /// Retornando dados do servidor em formato JSON
         url: valor,
@@ -47,3 +16,58 @@ function EncURL() {
         }
     });
 }
+
+function signUp() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    console.log("signUp called", email, password);
+  
+    // Criar conta usando email e senha
+    firebase.auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(function (userCredential) {
+        // Registro bem-sucedido
+        var user = userCredential.user;
+        alert("Conta criada com sucesso!");
+      })
+      .catch(function (error) {
+        // Lidar com erros de registro
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage);
+      });
+  }
+  
+  function signIn() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+  
+    firebase.auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(function (userCredential) {
+        var user = userCredential.user;
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("user-info").style.display = "block";
+        document.getElementById("user-email").innerText = user.email;
+      })
+      .catch(function (error) {
+        // Lidar com erros de login
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage);
+      });
+  }
+  
+  function signOut() {
+    firebase.auth()
+      .signOut()
+      .then(function () {
+        // Logout bem-sucedido
+        document.getElementById("login-container").style.display = "block";
+        document.getElementById("user-info").style.display = "none";
+      })
+      .catch(function (error) {
+        // Lidar com erros de logout
+        alert(error.message);
+      });
+  }
