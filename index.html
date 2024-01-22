@@ -4,68 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BlinkShort</title>
 
-    <!-- Adicionando Bootstrap CSS com cores modificadas -->
+    <link rel="icon" href="./assets/fav-icon.ico" type="image/x-icon">
+    <link href='./css/styles.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-    <script src="./blinkshort-firebase-config-file.js"></script>
-    <script src='./App.js'></script>
-    <script src='./function.js'></script>
+    <!-- INPUT VALIDATOR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.1.17/validator.min.js"></script>
 
-    <style type="text/css">
-        body {
-            background-color: #343a40;
-            color: #007bff;
-        }
 
-        #topo {
-            text-align: center;
-            color: #007bff;
-        }
+    <title>BlinkShort</title>
 
-        .container {
-            margin-top: 5%;
-        }
-
-        .form-control {
-            background-color: #495057;
-            border: 1px solid #495057;
-            color: #adb5bd;
-        }
-
-        #loginBtn {
-            background-color: #007bff;
-            color: #fff;
-        }
-    </style>
 </head>
 
 <body>
     <div class="container mt-5">
         <h1 id="topo">BlinkShort</h1>
-        <!-- Formulário de Login e Registro -->
+
         <form id="authForm">
-            <div class="form-group">
+            <div class="form-group" id="userInfo">
                 <label for="email">E-mail:</label>
-                <input type="email" class="form-control" name="email" id="email">
-            </div>
-            <div class="form-group">
+                <input type="email" class="form-control" id="loginEmail">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" name="password" id="password">
+                <input type="password" class="form-control" id="loginPassword">
             </div>
-            <button type="button" class="btn btn-success" onclick="signIn()">Sign In</button>
-            <button type="button" class="btn btn-primary" onclick="signUp()"">Sign Up</button>
+            <button id="createUser" type="button" class="btn btn-primary">Sign Up</button>
+            <button id="signinButton" type="button" class="btn btn-success">Sign In</button>
         </form>
     </div>
     </div>
 
-    <!-- Adicionando Bootstrap JS (opcional, mas muitas funcionalidades do Bootstrap dependem disso) -->
-    <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- SCRIPT FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+
+    <!-- SCRIPT BOOTSTRAP-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- MY SCRIPT-->
+    <script src="./scripts/App.js"></script>
+
 </body>
 
 </html>
