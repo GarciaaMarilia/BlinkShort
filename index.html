@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="./assets/fav-icon.ico" type="image/x-icon">
     <link href='./css/styles.css' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="./assets/fav-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- INPUT VALIDATOR -->
@@ -18,18 +19,18 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container mt-6">
         <h1 id="topo">BlinkShort</h1>
 
         <form id="authForm">
             <div class="form-group" id="userInfo">
                 <label for="email">E-mail:</label>
-                <input type="email" class="form-control" id="loginEmail">
+                <input type="email" class="form-control" id="loginEmail" placeholder="User@email.com">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" id="loginPassword">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
             </div>
             <button id="createUser" type="button" class="btn btn-primary">Sign Up</button>
-            <button id="signinButton" type="button" class="btn btn-success">Sign In</button>
+            <button id="signinButton" type="button" class="btn btn-primary">Sign In</button>
         </form>
     </div>
     </div>

@@ -1,14 +1,48 @@
-.body {
- background-color: #343a40;
+/* styles.css */
+
+body {
+ background-color: #16181a !important;
  color: hsl(211, 85%, 21%);
 }
 
-.container {
- margin-top: 5%;
+label {
+ font-size: 30px;
+ color: #d6108a
 }
 
 .form-control {
+ height: 60px !important;
+ width: 40% !important;
+ margin: 10px auto;
  background-color: #495057;
  border: 1px solid #495057;
- color: #adb5bd;
+ color: #2b3c4d;
+}
+
+.btn-primary {
+ height: 50px;
+ width: 120px;
+ margin: 10px auto;
+ border-width: 0 !important;
+ background-color: hsl(211, 94%, 14%) !important;
+}
+
+.btn-primary:hover {
+ height: 60px;
+ width: 140px;
+ border-width: 6 !important;
+ border-color: hsl(281, 67%, 21%) !important;
+}
+
+h1 {
+ font-family: "Roboto", sans-serif;
+ font-weight: 500;
+ font-size: 100px !important;
+ color: #66034d;
+ text-shadow: 2px 2px 4px #c40494;
+}
+
+.container {
+ text-align: center;
+ margin-top: 10%;
 }
