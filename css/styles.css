@@ -1,0 +1,14 @@
+.body {
+ background-color: #343a40;
+ color: hsl(211, 85%, 21%);
+}
+
+.container {
+ margin-top: 5%;
+}
+
+.form-control {
+ background-color: #495057;
+ border: 1px solid #495057;
+ color: #adb5bd;
+}
