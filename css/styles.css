@@ -6,8 +6,10 @@ body {
 }
 
 label {
- font-size: 30px;
- color: #d6108a
+ font-size: 20px;
+ color: #66034d;
+ letter-spacing: 2px;
+ margin-bottom: 0 !important;
 }
 
 .form-control {
@@ -23,23 +25,24 @@ label {
  height: 50px;
  width: 120px;
  margin: 10px auto;
- border-width: 0 !important;
- background-color: hsl(211, 94%, 14%) !important;
+ border-color: #66034d !important;
+ background-color: #66034d !important;
 }
 
 .btn-primary:hover {
  height: 60px;
  width: 140px;
- border-width: 6 !important;
- border-color: hsl(281, 67%, 21%) !important;
+ border-width: 10 ;
+ border-color: #fff !important;
 }
 
 h1 {
  font-family: "Roboto", sans-serif;
- font-weight: 500;
+ font-weight: 200;
  font-size: 100px !important;
- color: #66034d;
+ color: #241821;
  text-shadow: 2px 2px 4px #c40494;
+ letter-spacing: 6px;
 }
 
 .container {
