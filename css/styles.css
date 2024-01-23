@@ -2,7 +2,6 @@
 
 body {
  background-color: #16181a !important;
- color: hsl(211, 85%, 21%);
 }
 
 label {
@@ -13,18 +12,31 @@ label {
 }
 
 .form-control {
- height: 60px !important;
- width: 40% !important;
  margin: 10px auto;
- background-color: #495057;
- border: 1px solid #495057;
- color: #2b3c4d;
+ width: 40% !important;
+ height: 60px !important;
+ outline: none !important;
+
+ color: #fff !important;
+ background-color: #495057 !important;
+}
+
+.form-control:hover {
+ border-color: #66034d !important;
+}
+
+.btn:focus,
+.btn-link:focus,
+.form-control:focus {
+    outline: none !important;
 }
 
 .btn-primary {
  height: 50px;
  width: 120px;
  margin: 10px auto;
+ outline: none !important;
+
  border-color: #66034d !important;
  background-color: #66034d !important;
 }
@@ -32,20 +44,41 @@ label {
 .btn-primary:hover {
  height: 60px;
  width: 140px;
- border-width: 10 ;
+ border-width: 10;
  border-color: #fff !important;
 }
 
+.btn-link {
+ top: 40px;
+ right: 40px;
+ position: absolute;
+}
+
+.btn-link:hover {
+ background-color: #66034d !important;
+}
+
 h1 {
- font-family: "Roboto", sans-serif;
  font-weight: 200;
- font-size: 100px !important;
  color: #241821;
- text-shadow: 2px 2px 4px #c40494;
  letter-spacing: 6px;
+ font-size: 100px !important;
+ font-family: "Roboto", sans-serif;
+ text-shadow: 2px 2px 4px #c40494;
 }
 
 .container {
- text-align: center;
  margin-top: 10%;
+ text-align: center;
+}
+
+p {
+ font-weight: 200;
+ color: #66034d !important;
+ font-size: 30px !important;
+}
+
+.white-icon {
+ font-size: 2rem;
+ color: #fff !important;
 }
