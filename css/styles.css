@@ -6,7 +6,7 @@ body {
 
 label {
  font-size: 20px;
- color: #66034d;
+ color: #fff;
  letter-spacing: 2px;
  margin-bottom: 0 !important;
 }
@@ -65,16 +65,19 @@ h1 {
  font-size: 100px !important;
  font-family: "Roboto", sans-serif;
  text-shadow: 2px 2px 4px #c40494;
+ margin-bottom: 100px !important;
 }
 
-.container {
- margin-top: 10%;
- text-align: center;
+label {
+ font-size: 20px;
+ color: #66034d;
+ letter-spacing: 2px;
+ margin-bottom: 0 !important;
 }
 
 p {
  font-weight: 200;
- color: #66034d !important;
+ color: #fff !important;
  font-size: 30px !important;
 }
 
