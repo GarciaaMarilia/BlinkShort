@@ -1,7 +1,13 @@
- <img src="https://cdn.iconscout.com/icon/free/png-64/html5-2038876-1720089.png" alt="html5" width="50px" height="50px" >
-         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="css" width="50px" height="50px" >
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase" width="50px" height="50px" >
-        <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2752148-2284965.png" alt="javascript" width="50px" height="50px" >
+##
+
+ <div>
+    <img src="https://cdn.iconscout.com/icon/free/png-64/html5-2038876-1720089.png" alt="html5" width="50px" height="50px" >
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="css" width="50px" height="50px" >
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase" width="50px" height="50px" >
+    <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2752148-2284965.png" alt="javascript" width="50px" height="50px" >
+</div>
+
+##
 
 # BlinkShort Project
 
