@@ -1,6 +1,6 @@
 ##
 
- <div style="text-align: center">
+ <div style="align-items: space-between">
     <img src="https://cdn.iconscout.com/icon/free/png-64/html5-2038876-1720089.png" alt="html5" width="50px" height="50px" >
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="css" width="50px" height="50px" >
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg" alt="Firebase" width="50px" height="50px" >
@@ -16,8 +16,9 @@ The BlinkShort Project is a URL shortening system with basic authentication feat
 # File Structure
 
 - **index.html:** Main page containing the login form and the interface for URL shortening.
-- **initial-page.html:** Redirect page after successful login.
-- **functions.js:** File with JavaScript functions for login validation and URL shortening.
+- **App.js:**
+- **initialPage.html:** Redirect page after successful login.
+- **function.js:** File with JavaScript functions for login validation and URL shortening.
 - **style.css:** Style file for customizing the project's appearance.
 - **README.md:** This file, providing information and instructions about the project.
 
@@ -25,7 +26,7 @@ The BlinkShort Project is a URL shortening system with basic authentication feat
 
 1. Open the index.html file in a web browser.
 2. Enter your login credentials in the form.
-3. After logging in, you will be redirected to the initial-page.html page.
+3. After logging in, you will be redirected to the initialPage.html page.
 4. In the main form, enter the desired URL and click "Shorten URL."
 5. The shortened URL will be displayed on the page.
 
