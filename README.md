@@ -17,7 +17,7 @@ The BlinkShort Project is a URL shortening system with basic authentication feat
 
 - **index.html:** Main page containing the login form and the interface for user login and account creation.
 - **initialPage.html:** Page containing the interface for URL shortening.
-- **firebase-initialization.js:- ** File responsible for initializing Firebase, handling login, and user creation.
+- **firebase-initialization.js:** File responsible for initializing Firebase, handling login, and user creation.
 - **app.js:** Contains functions - for URL shortening, logging out, and saving shortened URLs to Firebase.
 - **style.css:** Style file for cus- tomizing the project's appearance.
 - **README.md:** This file provides i- nformation and instructions about the project.
