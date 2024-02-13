@@ -15,7 +15,7 @@
 
 <body>
     <div class="user-icon">
-        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#userModal">
+        <button id="getUserButton" type="button" class="btn btn-link" data-toggle="modal" data-target="#userModal">
             <i class="fas fa-user white-icon"></i>
         </button>
     </div>
@@ -23,12 +23,12 @@
     <div class="container mt-6">
         <form id="furl">
             <div class="form-group">
-                <input type="text" class="form-control" name="link" id="link" placeholder="Insira a URL">
+                <label for="link">Link:</label>
+                <input type="text" class="form-control" name="link" id="link" placeholder="Insert your URL">
+                <p id="shortedLink"></p>
+                <button type="button" class="btn btn-primary" onclick="getBlinkShort()">Shorten URL</button>
             </div>
-            <button type="button" class="btn btn-primary" onclick="getBlinkShort()">Gerar URL</button>
         </form>
-        <p class="mt-4">Link Gerado:</p>
-        <p id="url_encurtada"></p>
     </div>
 
     <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel"
@@ -36,17 +36,26 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="userModalLabel">Nome do Usuário</h5>
+                    <h5 class="modal-title" id="userModalLabel"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- Coloque aqui o código para exibir o nome do usuário -->
+                <div class="modal-body" id="userNameBody">
+                    <button id="signoutButton" type="button" class="btn btn-primary">Sign
+                        Out</button>
+                    <button type="button" class="btn btn-primary">Shortened URLs</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- SCRIPT FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
@@ -54,7 +63,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Função Para Encurtar URL -->
-    <script src="./scripts/function.js"></script>
+    <script src="./scripts/App.js"></script>
 </body>
 
 </html>

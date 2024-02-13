@@ -21,15 +21,32 @@
     <div class="container mt-6">
         <h1 id="topo">BlinkShort</h1>
 
+        <div class="form-group">
+            <button id="buttonSignInForm" type="button" onclick="showSignInForm()">Sign In</button>
+            <button id="buttonSignUpForm" type="button" onclick="showSignUpForm()">Sign Up</button>
+        </div>
+
         <form id="authForm">
-            <div class="form-group" id="userInfo">
-                <label for="email">E-mail:</label>
-                <input type="email" class="form-control" id="loginEmail" placeholder="User@email.com">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+            <div id="signInForm">
+                <div class="form-group" id="userInfo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="loginEmail" placeholder="User@email.com">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                    <button id="signinButton" type="button" class="btn btn-primary">Sign In</button>
+                </div>
             </div>
-            <button id="signinButton" type="button" class="btn btn-primary">Sign In</button>
-            <button id="createUser" type="button" class="btn btn-primary">Sign Up</button>
+            <div id="signUpForm" style="display: none;">
+                <div class="form-group" id="userInfo">
+                    <label for="email">Complete Name:</label>
+                    <input type="name" class="form-control" id="signupName" placeholder="Name">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="signupEmail" placeholder="User@email.com">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                    <button id="createUser" type="button" class="btn btn-primary">Sign Up</button>
+                </div>
+            </div>
         </form>
     </div>
     </div>
@@ -47,8 +64,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- MY SCRIPT-->
-    <script src="./scripts/App.js"></script>
-
+    <script src="./scripts/firebase-initialization.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-// app.js
 document.addEventListener("DOMContentLoaded", function () {
  const firebaseConfig = {
   apiKey: "AIzaSyBeUqPyYJxOSKRk1dcGW3M0FKonfzlnKR0",
@@ -11,88 +10,58 @@ document.addEventListener("DOMContentLoaded", function () {
  };
 
  firebase.initializeApp(firebaseConfig);
-
- const db = firebase.firestore();
  const auth = firebase.auth();
- const storage = firebase.storage();
-
- let userInput = document.getElementById("loginEmail");
- let passwordInput = document.getElementById("loginPassword");
-
- let createUser = document.getElementById("createUser");
-
- let signInUser = document.getElementById("signinButton");
-
- signInUser.addEventListener("click", () => {
-  if (userInput.value || passwordInput.value != "") {
-   signIn();
-  }
- });
-
- createUser.addEventListener("click", () => {
-  if (userInput.value || passwordInput.value != "") {
-   signUp();
-  }
- });
-
- function signUp() {
-  let email = userInput.value;
-  let password = passwordInput.value;
-
-  document.getElementById("createUser").addEventListener("click", function () {
-   var emailInput = document.getElementById("loginEmail").value;
-
-   if (!validator.isEmail(emailInput)) {
-    alert("Por favor, insira um endereço de e-mail válido.");
-    return;
-   }
-  });
-
-  auth
-   .createUserWithEmailAndPassword(email, password)
-   .then((data) => {
-    db.collection("users").doc(data.user.uid).set({
-     email: email,
-     password: password,
-    });
-    alert("Usuário criado com Sucesso! :)");
-    setTimeout(() => {
-     window.location.replace("../index.html");
-    }, 1000);
-   })
-   .catch((err) => {
-    alert("Favor, verifique os dados digitados");
-    console.error(err);
-   });
- }
-
- function signIn() {
-  let email = userInput.value;
-  let password = passwordInput.value;
-
-  auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
-   auth
-    .signInWithEmailAndPassword(email, password)
-    .then(() => {
-     console.log("Usuário logado");
-     window.location.replace("./initialPage.html");
-    })
-    .catch((error) => {
-     alert(
-      "Usuário não encontrado!\n Verifique seus dados ou crie um novo usuário :)"
-     );
-    });
-  });
- }
 
  function signOut() {
-  auth
-   .signOut()
-   .then(function () {
-    document.getElementById("userInfo").style.display = "none";
-   })
-   .catch(function (error) {
-    alert(error.message);
-   });
+  const user = auth.currentUser;
+  if (user) {
+   auth
+    .signOut()
+    .then(function () {
+     setTimeout(() => {
+      window.location.replace(
+       "/home/marilia/Documentos/encurtador/BlinkShort/index.html"
+      );
+     }, 500);
+    })
+    .catch(function (error) {
+     alert(error.message);
+    });
+  }
  }
+
+ function displayUserName() {
+  const user = auth.currentUser;
+  if (user) {
+   const userName = user.displayName;
+   document.getElementById(
+    "userModalLabel"
+   ).textContent = `Hello, ${userName}!`;
+  } else {
+   document.getElementById("userModalLabel").textContent =
+    "Usuário não encontrado";
+  }
+ }
+
+ document
+  .getElementById("getUserButton")
+  .addEventListener("click", displayUserName);
+
+ document.getElementById("signoutButton").addEventListener("click", signOut);
 });
+
+function getBlinkShort() {
+ var valor = document.getElementById("link").value;
+ $.getJSON("https://is.gd/create.php?callback=?", {
+  url: valor,
+  format: "json",
+ }).done(function (data) {
+  let novaUrl = data.shorturl;
+
+  if (novaUrl !== undefined) {
+   document.getElementById("shortedLink").innerHTML = novaUrl;
+  } else {
+   document.getElementById("shortedLink").innerHTML = "Erro ao gerar link";
+  }
+ });
+}

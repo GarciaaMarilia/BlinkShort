@@ -2,13 +2,21 @@
 
 body {
  background-color: #16181a !important;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+ margin: 0;
 }
 
-label {
- font-size: 20px;
- color: #fff;
- letter-spacing: 2px;
- margin-bottom: 0 !important;
+.modal-content {
+ background-color: #16181a !important;
+ color: white;
+}
+
+.form-group {
+ text-align: center;
 }
 
 .form-control {
@@ -16,7 +24,6 @@ label {
  width: 40% !important;
  height: 60px !important;
  outline: none !important;
-
  color: #fff !important;
  background-color: #495057 !important;
 }
@@ -28,22 +35,21 @@ label {
 .btn:focus,
 .btn-link:focus,
 .form-control:focus {
-    outline: none !important;
+ outline: none !important;
 }
 
 .btn-primary {
- height: 50px;
+ height: 56px;
  width: 120px;
  margin: 10px auto;
  outline: none !important;
-
  border-color: #66034d !important;
  background-color: #66034d !important;
 }
 
 .btn-primary:hover {
  height: 60px;
- width: 140px;
+ width: 130px;
  border-width: 10;
  border-color: #fff !important;
 }
@@ -58,6 +64,10 @@ label {
  background-color: #66034d !important;
 }
 
+.shorted-link {
+ color: white;
+}
+
 h1 {
  font-weight: 200;
  color: #241821;
@@ -66,11 +76,13 @@ h1 {
  font-family: "Roboto", sans-serif;
  text-shadow: 2px 2px 4px #c40494;
  margin-bottom: 100px !important;
+ text-align: center;
 }
 
 label {
+ display: block;
  font-size: 20px;
- color: #66034d;
+ color: white;
  letter-spacing: 2px;
  margin-bottom: 0 !important;
 }
@@ -84,4 +96,20 @@ p {
 .white-icon {
  font-size: 2rem;
  color: #fff !important;
+}
+
+#buttonSignInForm,
+#buttonSignUpForm {
+ color: #66034d;
+ border: #66034d;
+ border-width: 10px !important;
+ cursor: pointer !important;
+ font-size: 30px !important;
+ background: none !important;
+ margin-bottom: 40px !important;
+}
+
+#buttonSignInForm:hover,
+#buttonSignUpForm:hover {
+ color: #fff;
 }
