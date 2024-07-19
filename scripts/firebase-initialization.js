@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(() => {
      console.log("Usuário logado");
      window.location.replace(
-      "/home/marilia/Documentos/encurtador/BlinkShort/initialPage.html"
+      "./initialPage.html"
      );
     })
     .catch((error) => {

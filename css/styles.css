@@ -1,18 +1,36 @@
 /* styles.css */
 
 body {
- background-color: #16181a !important;
  display: flex;
  flex-direction: column;
  align-items: center;
  justify-content: center;
  height: 100vh;
  margin: 0;
+ font-family: "Roboto", sans-serif;
 }
 
-.modal-content {
- background-color: #16181a !important;
- color: white;
+header {
+ background-color: #ffc222;
+ padding: 0px 0px;
+ position: fixed;
+ width: 100%;
+ top: 0;
+ z-index: 1000;
+}
+
+.header-content {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+header h1 {
+ padding: 10px 20px;
+ font-size: 40px;
+ font-weight: 1000;
+ color: #fff;
+ font-family: "Open Sans", sans-serif;
 }
 
 .form-group {
@@ -22,14 +40,11 @@ body {
 .form-control {
  margin: 10px auto;
  width: 40% !important;
- height: 60px !important;
- outline: none !important;
- color: #fff !important;
- background-color: #495057 !important;
+ height: 50px !important;
 }
 
 .form-control:hover {
- border-color: #66034d !important;
+ border-color: #ffc222 !important;
 }
 
 .btn:focus,
@@ -43,8 +58,8 @@ body {
  width: 120px;
  margin: 10px auto;
  outline: none !important;
- border-color: #66034d !important;
- background-color: #66034d !important;
+ border-color: #fff !important;
+ background-color: #ffc222 !important;
 }
 
 .btn-primary:hover {
@@ -55,61 +70,38 @@ body {
 }
 
 .btn-link {
- top: 40px;
+ top: 15px;
  right: 40px;
  position: absolute;
 }
 
 .btn-link:hover {
- background-color: #66034d !important;
-}
-
-.shorted-link {
- color: white;
-}
-
-h1 {
- font-weight: 200;
- color: #241821;
- letter-spacing: 6px;
- font-size: 100px !important;
- font-family: "Roboto", sans-serif;
- text-shadow: 2px 2px 4px #c40494;
- margin-bottom: 100px !important;
- text-align: center;
+ background-color: #fff !important;
 }
 
 label {
  display: block;
- font-size: 20px;
- color: white;
- letter-spacing: 2px;
+ font-size: 16px;
  margin-bottom: 0 !important;
-}
-
-p {
- font-weight: 200;
- color: #fff !important;
- font-size: 30px !important;
 }
 
 .white-icon {
  font-size: 2rem;
- color: #fff !important;
+ color: #fff;
+}
+
+.white-icon:hover {
+ color: #ffc222;
 }
 
 #buttonSignInForm,
 #buttonSignUpForm {
- color: #66034d;
- border: #66034d;
- border-width: 10px !important;
- cursor: pointer !important;
- font-size: 30px !important;
- background: none !important;
- margin-bottom: 40px !important;
-}
-
-#buttonSignInForm:hover,
-#buttonSignUpForm:hover {
  color: #fff;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer !important;
+ background: #ffc222 !important;
+ height: 40px;
+ width: 100px;
+ margin: 10px auto;
 }

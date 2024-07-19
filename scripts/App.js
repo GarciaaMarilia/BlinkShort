@@ -59,9 +59,9 @@ function getBlinkShort() {
   let novaUrl = data.shorturl;
 
   if (novaUrl !== undefined) {
-   document.getElementById("shortedLink").innerHTML = novaUrl;
+   document.getElementById("shorted-link").innerHTML = novaUrl;
   } else {
-   document.getElementById("shortedLink").innerHTML = "Erro ao gerar link";
+   document.getElementById("shorted-link").innerHTML = "Erro ao gerar link";
   }
  });
 }
